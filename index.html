@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReUseHub - Pasar Barang Bekas</title>
+    <style>
+        /* Gaya tampilan sederhana untuk produk */
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 20px; background-color: #f9f9f9; }
+        h1 { color: #333; }
+        .product-container { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+        .product-card { background: white; border: 1px solid #ddd; padding: 15px; border-radius: 8px; width: 250px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .product-card h3 { margin: 10px 0 5px 0; font-size: 1.2rem; }
+        .price { color: #e44d26; font-weight: bold; margin: 5px 0; }
+        .location { color: #777; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <h1>Selamat Datang di ReUseHub</h1>
+    <p>Website pasar barang bekas online.</p>
+
+    <div class="product-container" id="daftar-produk"></div>
+
+    <script>
+        // Ini adalah data array produk yang kamu buat sebelumnya
+        const products = [
+            {
+                id: 1,
+                title: 'iPhone 13 Pro Bekas',
+                price: 'Rp 8.500.000',
+                image: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1200&auto=format&fit=crop',
+                location: 'Semarang'
+            },
+            {
+                id: 2,
+                title: 'Kamera Sony A6000',
+                price: 'Rp 4.200.000',
+                image: '', // Bisa dikosongkan dulu atau isi link gambar lain
+                location: 'Yogyakarta'
+            }
+        ];
+
+        // Kode JavaScript untuk menampilkan data di atas ke dalam HTML
+        const container = document.getElementById('daftar-produk');
+        
+        products.forEach(product => {
+            container.innerHTML += `
+                <div class="product-card">
+                    <h3>${product.title}</h3>
+                    <p class="price">${product.price}</p>
+                    <p class="location">📍 ${product.location}</p>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
